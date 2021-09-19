@@ -3,18 +3,18 @@
 //  Nightshift Extension
 //
 //  Created by Леша Маслаков on 3/23/20.
-//  Copyright © 2020 Леша Маслаков. All rights reserved.
+//  Copyright © 2020 Леша Маслаков.
+//  Copyright © 2021 Jahn Bertsch.
 //
 
 import SafariServices
 
-
 class SafariExtensionHandler: SFSafariExtensionHandler {
-
-    private var excluded: [String] = UserDefaults.standard.array(forKey: "excluded") as? [String] ?? [] {
+    private static var excluded: [String] = UserDefaults.standard.array(forKey: "excluded") as? [String] ?? [] {
         didSet {
             let defaults = UserDefaults.standard
             defaults.set(excluded, forKey: "excluded")
+            defaults.synchronize()
         }
     }
 
@@ -22,7 +22,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         switch messageName {
         case "nightshift":
             page.getPropertiesWithCompletionHandler { properties in
-                if let host = userInfo?["host"] as? String {
+                if let host = userInfo?["host"] as? String, host != "" {
                     self.dispatchMessage(page: page, host: host, darkMode: !self.isHostExcluded(host))
                 }
             }
@@ -72,7 +72,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         SafariExtensionViewController.shared.onDarkModeOff = nil
     }
 
-    func dispatchMessage(page: SFSafariPage?, host: String, darkMode: Bool) {
+    private func dispatchMessage(page: SFSafariPage?, host: String, darkMode: Bool) {
+        guard host != "" else {
+            return
+        }
+        
         page?.dispatchMessageToScript(
             withName: "nightshift",
             userInfo: [
@@ -84,18 +88,17 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
     private func addHostToExcluded(_ host: String) {
         if !isHostExcluded(host) {
-            excluded.append(host)
+            Self.excluded.append(host)
         }
     }
 
     private func removeHostFromExcluded(_ host: String) {
         if isHostExcluded(host) {
-            excluded.removeAll(where: { $0 == host} )
+            Self.excluded.removeAll(where: { $0 == host} )
         }
     }
 
     private func isHostExcluded(_ host: String) -> Bool {
-        return excluded.contains(host)
+        return Self.excluded.contains(host)
     }
-
 }

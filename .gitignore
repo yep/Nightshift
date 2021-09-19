@@ -11,3 +11,4 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.xcuserstate
+.DS_Store

@@ -1,22 +1,24 @@
 # Nightshift
 
-This Safari extension applies darkmode for websites
+This Safari extension enables dark-mode on websites.
 
 ![preview](https://i.imgur.com/rX5letn.png)
 
 ## Overview
 
-This extension utilizes CSS [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) 
-property. It inverts the whole page. Images and videos are inverted back. Due to this, some colors may then be inaccurate. 
+This extension utilizes the CSS [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
+property. It inverts the whole page, then invertes back images and videos. Due to the double invert, some colors may be inaccurate.
 
-You can enable/disable dark mode per site basis.
+You can enable or disable dark mode on a per site basis.
 
-## Install
+## Build and Debug
 
-I don't have a Developer ID and can't distribute macOS apps, so the best
-way is to build it yourself.
+Build and run the "Nightshift Extension" target in Xcode. When prompted "Choose app to run", select Safari.
 
-Moreover, Safari Extensions seems to be broken in macOS Catalina. You 
-might not be able to enable extension in prefenrences. One workaround
-is to boot your mac in Safe Mode, enable it, then boot normally.
+In Safari, enable the developer menu at -> Preferences -> Extended -> enable "Show Develop menu in menu bar"
 
+In menu "Develop", enable "Allow Unsigned Extensions"
+
+Enable the extension in Safari at -> Preferences -> Extensions -> enable the checkbox next to "Nighshift" in the left column
+
+For more information, see [Building a Safari App Extension](https://developer.apple.com/documentation/safariservices/safari_app_extensions/building_a_safari_app_extension)

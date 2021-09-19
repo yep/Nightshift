@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="SafariExtensionViewController" customModule="Nightshift_Extension" customModuleProvider="target">
             <connections>
+                <outlet property="domainLabel" destination="Psq-o9-ipa" id="MdG-rg-bXG"/>
                 <outlet property="showDefaults" destination="wJp-I8-cKs" id="uTB-Xu-qLi"/>
-                <outlet property="titleLabel" destination="4Iy-aV-wGF" id="EcM-s5-CpA"/>
                 <outlet property="toggleButton" destination="wJp-I8-cKs" id="Qc5-OP-Rb7"/>
                 <outlet property="view" destination="c22-O7-iKe" id="vwT-Xx-Aiz"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="330" height="119"/>
+        <customView misplaced="YES" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="242" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wJp-I8-cKs">
-                    <rect key="frame" x="101" y="13" width="129" height="32"/>
-                    <buttonCell key="cell" type="push" title="Dark Mode Off" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1yz-Ii-Oku">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Psq-o9-ipa">
+                    <rect key="frame" x="18" y="54" width="206" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Domain" id="WqO-6A-ZNw">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wJp-I8-cKs">
+                    <rect key="frame" x="44" y="13" width="154" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="7d3-c9-2eN"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Enable Nightshift" bezelStyle="rounded" alignment="center" borderStyle="border" focusRingType="none" imageScaling="proportionallyDown" inset="2" id="1yz-Ii-Oku">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -29,22 +41,23 @@
                         <action selector="onClick:" target="-2" id="yHw-MI-GVT"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Iy-aV-wGF">
-                    <rect key="frame" x="100" y="83" width="130" height="16"/>
-                    <textFieldCell key="cell" lineBreakMode="charWrapping" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="Nightshift Extension" id="2Ec-kd-q2K">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="4Iy-aV-wGF" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="3ry-eW-PjI"/>
-                <constraint firstItem="4Iy-aV-wGF" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="Eoi-1S-9XA"/>
-                <constraint firstAttribute="bottom" secondItem="wJp-I8-cKs" secondAttribute="bottom" constant="20" id="LGd-Ou-aEd"/>
-                <constraint firstItem="wJp-I8-cKs" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="W3v-P6-e8q"/>
+                <constraint firstAttribute="trailing" secondItem="wJp-I8-cKs" secondAttribute="trailing" constant="51" id="B2A-Jj-Ogm"/>
+                <constraint firstItem="wJp-I8-cKs" firstAttribute="top" secondItem="Psq-o9-ipa" secondAttribute="bottom" constant="14" id="ERT-SE-b4Y"/>
+                <constraint firstAttribute="trailing" secondItem="Psq-o9-ipa" secondAttribute="trailing" constant="20" id="EpL-8s-hZ2"/>
+                <constraint firstAttribute="bottom" secondItem="wJp-I8-cKs" secondAttribute="bottom" constant="20" symbolic="YES" id="eLv-cN-fqw"/>
+                <constraint firstItem="wJp-I8-cKs" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="51" id="ft0-Ya-EmY"/>
+                <constraint firstItem="Psq-o9-ipa" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" symbolic="YES" id="pKW-C7-h17"/>
+                <constraint firstItem="Psq-o9-ipa" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="sbg-5i-qIe"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="154.5"/>
+            <point key="canvasLocation" x="18.5" y="101"/>
         </customView>
+        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="v47-d9-mIV">
+            <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="gDe-o4-h4Q"/>
+            <point key="canvasLocation" x="139" y="6"/>
+        </imageView>
     </objects>
 </document>

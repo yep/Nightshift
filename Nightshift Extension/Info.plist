@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Nightshift Extension</string>
+	<string>Nightshift</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -24,17 +24,6 @@
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSExtension</key>
 	<dict>
-		<key>SFSafariStyleSheet</key>
-		<array>
-			<dict>
-				<key>Style Sheet</key>
-				<string>stackoverflow-dark.css</string>
-				<key>Allowed URL Patterns</key>
-				<array>
-					<string>https://*.stackoverflow.com/*</string>
-				</array>
-			</dict>
-		</array>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.Safari.extension</string>
 		<key>NSExtensionPrincipalClass</key>
@@ -46,6 +35,17 @@
 				<string>script.js</string>
 			</dict>
 		</array>
+		<key>SFSafariStyleSheet</key>
+		<array>
+			<dict>
+				<key>Allowed URL Patterns</key>
+				<array>
+					<string>https://*.stackoverflow.com/*</string>
+				</array>
+				<key>Style Sheet</key>
+				<string>stackoverflow-dark.css</string>
+			</dict>
+		</array>
 		<key>SFSafariToolbarItem</key>
 		<dict>
 			<key>Action</key>
@@ -55,7 +55,7 @@
 			<key>Image</key>
 			<string>ToolbarItemIcon.pdf</string>
 			<key>Label</key>
-			<string>Your Button</string>
+			<string>$(PRODUCT_NAME)</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
@@ -69,8 +69,8 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2020 Aleksei Maslakov. All rights reserved.</string>
+	<string>Copyright © 2020-2021 Aleksei Maslakov, Jahn Bertsch</string>
 	<key>NSHumanReadableDescription</key>
-	<string>Nighshift enables dark mode for websites</string>
+	<string>Nighshift enables dark mode for websites (https://github.com/yep/Nightshift)</string>
 </dict>
 </plist>

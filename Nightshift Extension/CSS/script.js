@@ -1,8 +1,7 @@
-// Normally this would be inside "DOMContenLoaded" event listener
-// however, this works slightly faster and helps avoid white screen
+// Normally this would be inside "DOMContenLoaded" event listener.
+// However, this works slightly faster and helps avoid white screen.
 safari.extension.dispatchMessage("nightshift", {"host": window.location.host});
 safari.self.addEventListener("message", handleMessage);
-
 
 const STYLES = {
     "": "dark.css",
@@ -10,7 +9,6 @@ const STYLES = {
     "google.com": "google-dark.css",
     "youtube.com": "youtube-dark.css",
 }
-
 
 function handleMessage(event) {
     const { name, message } = event;
@@ -27,7 +25,6 @@ function handleMessage(event) {
     }
 }
 
-
 function setDarkMode(mode) {
     let styles = [
         ...Object.entries(STYLES)
@@ -43,7 +40,6 @@ function setDarkMode(mode) {
     }
 }
 
-
 function addStylesheet(href) {
     let link = document.createElement("link");
     link.href = href
@@ -51,7 +47,6 @@ function addStylesheet(href) {
     link.rel = "stylesheet";
     document.getElementsByTagName("head")[0].appendChild(link);
 }
-
 
 function removeStylesheet(href) {
     let elements = document.querySelectorAll(`link[rel=stylesheet][href~="${href}"]`);
