@@ -11,7 +11,7 @@ import SafariServices.SFSafariApplication
 
 class ViewController: NSViewController {
     @IBAction func openSafariExtensionPreferences(_ sender: NSButton) {
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: "com.github.yep.macos.nightshift.extension") { error in
+        SFSafariApplication.showPreferencesForExtension(withIdentifier: "com.github.yep.nightshift.extension") { error in
             if let error = error {
                 DispatchQueue.main.async {
                     self.display(error: error)
