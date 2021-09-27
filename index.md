@@ -1,37 +1,11 @@
-## Welcome to GitHub Pages
+# Nightshift
 
-You can use the [editor on GitHub](https://github.com/yep/Nightshift/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Dark mode for Safari.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You can enable or disable dark mode on a per site basis.
 
-### Markdown
+This extension utilizes the CSS [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) property. It inverts the whole page, then invertes back images and videos. Due to the double invert, some colors may be inaccurate.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Download
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/yep/Nightshift/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+See [macOS AppStore](https://apps.apple.com/us/app/nightshift-dark-mode/id1561604170).
