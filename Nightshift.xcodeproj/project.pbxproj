@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000DB49E27DE86DC00733359 /* dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 000DB49D27DE86DC00733359 /* dark.css */; };
 		19AD841A26F7A4D000209851 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 19AD841926F7A4D000209851 /* ToolbarItemIcon.pdf */; };
 		19EE86A526F7C67B00901968 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 19EE86A326F7C67B00901968 /* LICENSE */; };
 		19EE86A626F7C67B00901968 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 19EE86A426F7C67B00901968 /* README.md */; };
 		19F5436826F7A27400835C55 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F5436726F7A27400835C55 /* Media.xcassets */; };
-		19F5437326F7A29000835C55 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 19F5436D26F7A29000835C55 /* script.js */; };
-		19F5437C26F7A32F00835C55 /* github-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 19F5437726F7A32F00835C55 /* github-dark.css */; };
-		19F5437D26F7A32F00835C55 /* stackoverflow-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 19F5437826F7A32F00835C55 /* stackoverflow-dark.css */; };
-		19F5437E26F7A32F00835C55 /* dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 19F5437926F7A32F00835C55 /* dark.css */; };
-		19F5437F26F7A32F00835C55 /* youtube-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 19F5437A26F7A32F00835C55 /* youtube-dark.css */; };
-		19F5438026F7A32F00835C55 /* google-dark.css in Resources */ = {isa = PBXBuildFile; fileRef = 19F5437B26F7A32F00835C55 /* google-dark.css */; };
+		19F5437326F7A29000835C55 /* nightshift.js in Resources */ = {isa = PBXBuildFile; fileRef = 19F5436D26F7A29000835C55 /* nightshift.js */; };
 		19F5438126F7A34800835C55 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F5436726F7A27400835C55 /* Media.xcassets */; };
 		74F0A3372428AA6E00D78800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0A3362428AA6E00D78800 /* AppDelegate.swift */; };
 		74F0A33A2428AA6E00D78800 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F0A3382428AA6E00D78800 /* Main.storyboard */; };
@@ -53,16 +49,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		000DB49D27DE86DC00733359 /* dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dark.css; sourceTree = "<group>"; };
 		19AD841926F7A4D000209851 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		19EE86A326F7C67B00901968 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		19EE86A426F7C67B00901968 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		19F5436726F7A27400835C55 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		19F5436D26F7A29000835C55 /* script.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
-		19F5437726F7A32F00835C55 /* github-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "github-dark.css"; sourceTree = "<group>"; };
-		19F5437826F7A32F00835C55 /* stackoverflow-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "stackoverflow-dark.css"; sourceTree = "<group>"; };
-		19F5437926F7A32F00835C55 /* dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dark.css; sourceTree = "<group>"; };
-		19F5437A26F7A32F00835C55 /* youtube-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "youtube-dark.css"; sourceTree = "<group>"; };
-		19F5437B26F7A32F00835C55 /* google-dark.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "google-dark.css"; sourceTree = "<group>"; };
+		19F5436D26F7A29000835C55 /* nightshift.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nightshift.js; sourceTree = "<group>"; };
 		74F0A3312428AA6E00D78800 /* Nightshift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nightshift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F0A3342428AA6E00D78800 /* Nightshift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Nightshift.entitlements; sourceTree = "<group>"; };
 		74F0A3362428AA6E00D78800 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000DB49C27DE86DC00733359 /* css */ = {
+			isa = PBXGroup;
+			children = (
+				000DB49D27DE86DC00733359 /* dark.css */,
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
 		19F5436626F7A27400835C55 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,17 +106,12 @@
 			path = ../Shared;
 			sourceTree = "<group>";
 		};
-		19F5437626F7A32F00835C55 /* CSS */ = {
+		19F5437626F7A32F00835C55 /* js */ = {
 			isa = PBXGroup;
 			children = (
-				19F5436D26F7A29000835C55 /* script.js */,
-				19F5437926F7A32F00835C55 /* dark.css */,
-				19F5437726F7A32F00835C55 /* github-dark.css */,
-				19F5437826F7A32F00835C55 /* stackoverflow-dark.css */,
-				19F5437A26F7A32F00835C55 /* youtube-dark.css */,
-				19F5437B26F7A32F00835C55 /* google-dark.css */,
+				19F5436D26F7A29000835C55 /* nightshift.js */,
 			);
-			path = CSS;
+			path = js;
 			sourceTree = "<group>";
 		};
 		74F0A3282428AA6E00D78800 = {
@@ -143,10 +138,10 @@
 		74F0A3332428AA6E00D78800 /* Nightshift */ = {
 			isa = PBXGroup;
 			children = (
-				74F0A3342428AA6E00D78800 /* Nightshift.entitlements */,
 				74F0A3362428AA6E00D78800 /* AppDelegate.swift */,
-				74F0A3382428AA6E00D78800 /* Main.storyboard */,
 				74F0A33B2428AA6E00D78800 /* ViewController.swift */,
+				74F0A3342428AA6E00D78800 /* Nightshift.entitlements */,
+				74F0A3382428AA6E00D78800 /* Main.storyboard */,
 				74F0A33F2428AA7200D78800 /* Info.plist */,
 			);
 			path = Nightshift;
@@ -169,7 +164,8 @@
 				74F0A3532428AA7200D78800 /* Info.plist */,
 				74F0A3582428AA7200D78800 /* Nightshift_Extension.entitlements */,
 				19AD841926F7A4D000209851 /* ToolbarItemIcon.pdf */,
-				19F5437626F7A32F00835C55 /* CSS */,
+				19F5437626F7A32F00835C55 /* js */,
+				000DB49C27DE86DC00733359 /* css */,
 				19F5436626F7A27400835C55 /* Shared */,
 			);
 			path = "Nightshift Extension";
@@ -267,15 +263,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F5437C26F7A32F00835C55 /* github-dark.css in Resources */,
-				19F5437326F7A29000835C55 /* script.js in Resources */,
-				19F5438026F7A32F00835C55 /* google-dark.css in Resources */,
+				19F5437326F7A29000835C55 /* nightshift.js in Resources */,
+				000DB49E27DE86DC00733359 /* dark.css in Resources */,
 				19AD841A26F7A4D000209851 /* ToolbarItemIcon.pdf in Resources */,
 				19F5436826F7A27400835C55 /* Media.xcassets in Resources */,
 				74F0A3522428AA7200D78800 /* SafariExtensionViewController.xib in Resources */,
-				19F5437D26F7A32F00835C55 /* stackoverflow-dark.css in Resources */,
-				19F5437E26F7A32F00835C55 /* dark.css in Resources */,
-				19F5437F26F7A32F00835C55 /* youtube-dark.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +491,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Nightshift/Info.plist;
@@ -507,6 +499,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.yep.nightshift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -522,7 +516,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Nightshift/Info.plist;
@@ -530,6 +524,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.yep.nightshift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

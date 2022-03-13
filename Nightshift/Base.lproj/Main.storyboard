@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="18122"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,6 +20,12 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="License Information" id="Etb-so-al5" userLabel="License Information">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="ei4-9z-n4V" kind="modal" id="ZSC-qu-8Js"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -71,18 +77,18 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="76"/>
+            <point key="canvasLocation" x="437" y="290"/>
         </scene>
         <!--Nightshift-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController title="Nightshift" id="XfG-lQ-9wD" customClass="ViewController" customModule="Nightshift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="425" height="245"/>
+                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="425" height="277"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ooh-eV-eLQ">
-                                <rect key="frame" x="55" y="13" width="314" height="32"/>
+                                <rect key="frame" x="55" y="54" width="314" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="s6U-8M-kLM"/>
                                 </constraints>
@@ -98,7 +104,7 @@ DQ
                                 </connections>
                             </button>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FWV-e2-WQh" userLabel="IconView">
-                                <rect key="frame" x="167" y="135" width="90" height="90"/>
+                                <rect key="frame" x="167" y="170" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Ckw-Au-aLX"/>
                                     <constraint firstAttribute="height" constant="90" id="ohU-tz-xgp"/>
@@ -106,7 +112,7 @@ DQ
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="ToolbarItemIcon" id="Hhb-TZ-Dhg"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RJy-1f-8sm">
-                                <rect key="frame" x="52" y="111" width="320" height="16"/>
+                                <rect key="frame" x="52" y="146" width="320" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="WqH-Qn-NNR"/>
                                 </constraints>
@@ -117,35 +123,102 @@ DQ
                                 </textFieldCell>
                             </textField>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="jo1-9z-AIJ">
-                                <rect key="frame" x="134" y="57" width="156" height="43"/>
+                                <rect key="frame" x="134" y="98" width="156" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="4Xh-aj-fZJ"/>
                                     <constraint firstAttribute="width" constant="150" id="k3y-7p-Q3p"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="axesIndependently" imageFrameStyle="groove" image="HowToEnable" id="Hmg-Ld-Y1Q"/>
                             </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HJo-Rg-l2O">
+                                <rect key="frame" x="59" y="29" width="313" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="dcm-1y-y3Q"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="To uninstall, quit Safari and delete this application." id="29d-dw-35R">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="jo1-9z-AIJ" firstAttribute="centerX" secondItem="ooh-eV-eLQ" secondAttribute="centerX" id="7Cc-hc-O88"/>
+                            <constraint firstAttribute="bottom" secondItem="HJo-Rg-l2O" secondAttribute="bottom" constant="29" id="7np-Qa-Xtc"/>
                             <constraint firstItem="ooh-eV-eLQ" firstAttribute="top" secondItem="jo1-9z-AIJ" secondAttribute="bottom" constant="20" id="9HG-Uw-zFn"/>
                             <constraint firstItem="ooh-eV-eLQ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="62" id="BUU-JX-Hrf"/>
                             <constraint firstItem="RJy-1f-8sm" firstAttribute="centerX" secondItem="jo1-9z-AIJ" secondAttribute="centerX" id="JbZ-rl-hFn"/>
                             <constraint firstItem="FWV-e2-WQh" firstAttribute="centerX" secondItem="RJy-1f-8sm" secondAttribute="centerX" id="UxW-T4-Y0h"/>
-                            <constraint firstAttribute="bottom" secondItem="ooh-eV-eLQ" secondAttribute="bottom" constant="20" symbolic="YES" id="aws-xF-GMX"/>
+                            <constraint firstItem="HJo-Rg-l2O" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="61" id="az6-8V-gTB"/>
                             <constraint firstItem="FWV-e2-WQh" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="eWl-Hk-gai"/>
                             <constraint firstItem="RJy-1f-8sm" firstAttribute="top" secondItem="FWV-e2-WQh" secondAttribute="bottom" constant="8" id="hWO-H8-A8V"/>
                             <constraint firstAttribute="trailing" secondItem="FWV-e2-WQh" secondAttribute="trailing" constant="168" id="jk4-Sj-EOV"/>
-                            <constraint firstItem="jo1-9z-AIJ" firstAttribute="top" secondItem="RJy-1f-8sm" secondAttribute="bottom" constant="14" id="p7X-hV-D8f"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HJo-Rg-l2O" secondAttribute="trailing" constant="55" id="mku-8u-sNs"/>
+                            <constraint firstItem="jo1-9z-AIJ" firstAttribute="top" secondItem="RJy-1f-8sm" secondAttribute="bottom" constant="8" id="p7X-hV-D8f"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RJy-1f-8sm" secondAttribute="trailing" id="p7t-8J-1gD"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ooh-eV-eLQ" secondAttribute="trailing" id="pqf-n4-fc6"/>
                             <constraint firstItem="FWV-e2-WQh" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="167" id="r3k-Sa-oDM"/>
+                            <constraint firstItem="HJo-Rg-l2O" firstAttribute="top" secondItem="ooh-eV-eLQ" secondAttribute="bottom" constant="16" id="yWv-pu-6UD"/>
                             <constraint firstItem="RJy-1f-8sm" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="54" id="yX6-4Y-Mwa"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.5" y="298.5"/>
+            <point key="canvasLocation" x="104.5" y="313"/>
+        </scene>
+        <!--License Information-->
+        <scene sceneID="61z-iQ-H6Z">
+            <objects>
+                <viewController title="License Information" id="ei4-9z-n4V" sceneMemberID="viewController">
+                    <view key="view" id="unM-rC-Adc">
+                        <rect key="frame" x="0.0" y="0.0" width="544" height="376"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HUr-Qz-gKA">
+                                <rect key="frame" x="18" y="20" width="508" height="336"/>
+                                <textFieldCell key="cell" id="1LQ-Gr-rRm">
+                                    <font key="font" metaFont="system" size="11"/>
+                                    <mutableString key="title">MIT License
+
+Copyright (c) 2020 Aleksei Maslakov
+Copyright (c) 2021 Dark Reader Ltd.
+Copyright (c) 2021-2022 Jahn Bertsch
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</mutableString>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="HUr-Qz-gKA" firstAttribute="leading" secondItem="unM-rC-Adc" secondAttribute="leading" constant="20" symbolic="YES" id="Adx-up-nvt"/>
+                            <constraint firstItem="HUr-Qz-gKA" firstAttribute="top" secondItem="unM-rC-Adc" secondAttribute="top" constant="20" symbolic="YES" id="GtA-7V-ART"/>
+                            <constraint firstItem="HUr-Qz-gKA" firstAttribute="top" secondItem="unM-rC-Adc" secondAttribute="top" constant="20" symbolic="YES" id="bR5-We-oCt"/>
+                            <constraint firstAttribute="trailing" secondItem="HUr-Qz-gKA" secondAttribute="trailing" constant="20" symbolic="YES" id="r9m-Gz-omd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="rGK-85-vQh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879" y="290"/>
         </scene>
     </scenes>
     <resources>

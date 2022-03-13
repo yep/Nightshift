@@ -4,11 +4,12 @@
 //
 //  Created by Леша Маслаков on 3/23/20.
 //  Copyright © 2020 Леша Маслаков.
-//  Copyright © 2021 Jahn Bertsch.
+//  Copyright © 2021-2022 Jahn Bertsch.
 //
 
 import SafariServices
 
+@available(macOSApplicationExtension 10.12, *)
 class SafariExtensionHandler: SFSafariExtensionHandler {
     private static var excluded: [String] = UserDefaults.standard.array(forKey: "excluded") as? [String] ?? [] {
         didSet {
@@ -59,6 +60,11 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                                 self.addHostToExcluded(host)
                                 self.dispatchMessage(page: page, host: host, darkMode: false)
                             }
+                            SafariExtensionViewController.shared.onReload = { () -> Void in
+                                page?.dispatchMessageToScript(
+                                    withName: "nightshift-reload"
+                                )
+                            }
                         }
                     }
                 }
@@ -70,6 +76,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         SafariExtensionViewController.shared.host = nil
         SafariExtensionViewController.shared.onDarkModeOn = nil
         SafariExtensionViewController.shared.onDarkModeOff = nil
+        SafariExtensionViewController.shared.onReload = nil
     }
 
     private func dispatchMessage(page: SFSafariPage?, host: String, darkMode: Bool) {

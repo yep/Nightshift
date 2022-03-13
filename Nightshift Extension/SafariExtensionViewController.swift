@@ -8,6 +8,7 @@
 
 import SafariServices
 
+@available(macOSApplicationExtension 10.12, *)
 class SafariExtensionViewController: SFSafariExtensionViewController {
     @IBOutlet weak var domainLabel: NSTextField!
     @IBOutlet weak var toggleButton: NSButton!
@@ -41,6 +42,7 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
     
     var onDarkModeOn: (() -> Void)?
     var onDarkModeOff: (() -> Void)?
+    var onReload: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,5 +55,6 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
             onDarkModeOn?()
         }
         darkMode = !darkMode;
+        onReload?()
     }
 }

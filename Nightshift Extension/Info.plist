@@ -32,7 +32,7 @@
 		<array>
 			<dict>
 				<key>Script</key>
-				<string>script.js</string>
+				<string>nightshift.js</string>
 			</dict>
 		</array>
 		<key>SFSafariStyleSheet</key>
@@ -69,7 +69,7 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2020-2021 Aleksei Maslakov, Jahn Bertsch</string>
+	<string>Copyright © 2020-2022 Aleksei Maslakov, Jahn Bertsch</string>
 	<key>NSHumanReadableDescription</key>
 	<string>Nighshift enables dark mode for websites (https://github.com/yep/Nightshift)</string>
 </dict>
