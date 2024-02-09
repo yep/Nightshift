@@ -4,7 +4,7 @@
 //
 //  Created by Леша Маслаков on 3/23/20.
 //  Copyright © 2020 Леша Маслаков.
-//  Copyright © 2021-2022 Jahn Bertsch.
+//  Copyright © 2021-2024 Jahn Bertsch.
 //
 
 import SafariServices
