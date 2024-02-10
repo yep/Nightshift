@@ -13,9 +13,8 @@ import SafariServices
 class SafariExtensionHandler: SFSafariExtensionHandler {
     private static var excluded: [String] = UserDefaults.standard.array(forKey: "excluded") as? [String] ?? [] {
         didSet {
-            let defaults = UserDefaults.standard
-            defaults.set(excluded, forKey: "excluded")
-            defaults.synchronize()
+            UserDefaults.standard.set(excluded, forKey: "excluded")
+            UserDefaults.standard.synchronize()
         }
     }
 
@@ -44,26 +43,14 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         window.getActiveTab { tab in
             tab?.getActivePage { page in
                 page?.getPropertiesWithCompletionHandler { properties in
-                    /* update has to be done on the main thread
-                       https://stackoverflow.com/a/60144786/11717191 */
-                    DispatchQueue.main.async {
-                        if let url = properties?.url, let hostname = url.host {
-                            let host = ((url.port) != nil) ? "\(hostname):\(url.port!)" : hostname
-                            SafariExtensionViewController.shared.host = host
-                            SafariExtensionViewController.shared.darkMode = !self.isHostExcluded(host)
-                            SafariExtensionViewController.shared.onDarkModeOn = { () -> Void in
-                                self.removeHostFromExcluded(host)
-                                self.dispatchMessage(page: page, host: host, darkMode: true)
-                            }
-                            SafariExtensionViewController.shared.onDarkModeOff = { () -> Void in
-                                self.addHostToExcluded(host)
-                                self.dispatchMessage(page: page, host: host, darkMode: false)
-                            }
-                            SafariExtensionViewController.shared.onReload = { () -> Void in
-                                page?.dispatchMessageToScript(
-                                    withName: "nightshift-reload"
-                                )
-                            }
+                    if let url = properties?.url,
+                       let hostname = url.host,
+                       let page = page
+                    {
+                        /* update has to be done on the main thread
+                           https://stackoverflow.com/a/60144786/11717191 */
+                        DispatchQueue.main.async {
+                            self.popoverWillShow(url: url, hostname: hostname, page: page)
                         }
                     }
                 }
@@ -77,8 +64,29 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         SafariExtensionViewController.shared.onDarkModeOff = nil
         SafariExtensionViewController.shared.onReload = nil
     }
+    
+    // -- MARK: Private
+        
+    fileprivate func popoverWillShow(url: URL, hostname: String, page: SFSafariPage) {
+        let host = ((url.port) != nil) ? "\(hostname):\(url.port!)" : hostname
+        SafariExtensionViewController.shared.host = host
+        SafariExtensionViewController.shared.darkMode = !isHostExcluded(host)
+        SafariExtensionViewController.shared.onDarkModeOn = { () -> Void in
+            self.removeHostFromExcluded(host)
+            self.dispatchMessage(page: page, host: host, darkMode: true)
+        }
+        SafariExtensionViewController.shared.onDarkModeOff = { () -> Void in
+            self.addHostToExcluded(host)
+            self.dispatchMessage(page: page, host: host, darkMode: false)
+        }
+        SafariExtensionViewController.shared.onReload = { () -> Void in
+            page.dispatchMessageToScript(
+                withName: "nightshift-reload"
+            )
+        }
+    }
 
-    private func dispatchMessage(page: SFSafariPage?, host: String, darkMode: Bool) {
+    fileprivate func dispatchMessage(page: SFSafariPage?, host: String, darkMode: Bool) {
         guard host != "" else {
             return
         }
@@ -92,19 +100,19 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
         )
     }
 
-    private func addHostToExcluded(_ host: String) {
+    fileprivate func addHostToExcluded(_ host: String) {
         if !isHostExcluded(host) {
             Self.excluded.append(host)
         }
     }
 
-    private func removeHostFromExcluded(_ host: String) {
+    fileprivate func removeHostFromExcluded(_ host: String) {
         if isHostExcluded(host) {
             Self.excluded.removeAll(where: { $0 == host} )
         }
     }
 
-    private func isHostExcluded(_ host: String) -> Bool {
+    fileprivate func isHostExcluded(_ host: String) -> Bool {
         return Self.excluded.contains(host)
     }
 }
