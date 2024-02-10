@@ -33,8 +33,7 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
 
     override func validateToolbarItem(in window: SFSafariWindow, validationHandler: @escaping ((Bool, String) -> Void)) {
-        let enabled = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
-        validationHandler(enabled, "")
+        validationHandler(true, "")
     }
 
     override func popoverViewController() -> SFSafariExtensionViewController {
